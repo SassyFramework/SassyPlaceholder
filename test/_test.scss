@@ -1,0 +1,32 @@
+
+@import "sassybreakpoint/sassy-breakpoint";
+@import "../sassy-placeholder";
+
+
+
+@include sf-add-p(default-style){
+    margin: 10px;
+    border: 1px;
+}
+
+.header {
+  @include sf-breakpoint("small-only"){
+      @include sf-use-p(default-style);
+  }
+
+  &__item{
+       @include sf-use-p(default-style);
+       color: #000;
+  }
+
+}
+
+.footer {
+  @include sf-breakpoint("medium-only"){
+      @include sf-use-p(default-style);
+  }
+}
+
+.content{
+  @extend %default-style;
+}
